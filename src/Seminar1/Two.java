@@ -1,3 +1,5 @@
+package Seminar1;
+
 //Вывести все простые числа от 1 до 1000
 public class Two {
     public static void main(String[] args) {

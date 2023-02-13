@@ -1,44 +1,4 @@
-//import java.time.LocalDateTime;
-//public class Seminar_one {
-//    public static void main(String[] args) {
-//        System.out.println("Hello world!");
-//        LocalDateTime dateTime = LocalDateTime.now();
-//        System.out.println(dateTime);
-//    }
-//}
-
-//import java.util.Scanner;
-//public class Seminar_one {
-//    public static void main(String[] args) {
-//        Scanner scanner = new Scanner(System.in);
-//        System.out.print("Введите имя: ");
-//        String name = scanner.nextLine();
-//        System.out.println("Привет, " + name + "!");
-//    }
-//}
-
-//public class Seminar_one{
-//    public static void main(String[] args) {
-//        int[] array = {1, 1, 0, 1, 1, 1};
-//        int maxSequence = 0;
-//        int currentSequence = 0;
-//        for (int i : array) {
-//            if (i == 1) {
-//                currentSequence++;
-//            } else {
-//                if (currentSequence > maxSequence) {
-//                    maxSequence = currentSequence;
-//                }
-//                currentSequence = 0;
-//            }
-//        }
-//        if (currentSequence > maxSequence) {
-//            maxSequence = currentSequence;
-//        }
-//        System.out.println(maxSequence);
-//    }
-//}
-
+package Seminar1;
 //import java.util.Arrays;
 //
 //public class  Seminar_one {

@@ -1,4 +1,4 @@
-//Реализовать простой калькулятор
+package Seminar1;//Реализовать простой калькулятор
 import java.util.Scanner;
 public class Three {
     //простой калькулятор

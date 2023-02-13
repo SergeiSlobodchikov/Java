@@ -1,3 +1,5 @@
+package Seminar1;
+
 public class ma {
     public static void main(String[] args) {
         getString(8,'a','b');
