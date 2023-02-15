@@ -5,8 +5,12 @@
 
 ## Оглавление
 
-<details><summary>Урок 1. Знакомство с языком программирования Java</summary>
+<details> <summary>Урок 1. Знакомство с языком программирования Java</summary>
+
 * [Семинар 1](https://github.com/SergeiSlobodchikov/Java/tree/main/src/Seminar1)
+
 </details>
+
 <details><summary>Урок 2. Почему вы не можете не использовать API</summary>
+
 * [Семинар 2](https://github.com/SergeiSlobodchikov/Java/tree/main/src/Seminar2)</details>
