@@ -8,23 +8,25 @@ public class HomeWork {
 //        System.out.println(normalizeString(scan()));
     }
 
-    //        public static String scan(){
-//        Scanner scanner = new Scanner(System.in);
-//        return scanner.nextLine();
+//    public static String scan(){
+//        Scanner sc = new Scanner(System.in);
+//        String scanner = sc.nextLine();
+//        sc.close();
+//        return scanner;
 //    }
     public static String normalizeString(String str) {
         String stroka = "Пустая строка!";
         if (str.length() > 0) {
             stroka = str.trim().replaceAll("\\s+", " ") + ".";
-            for (int i = 0; i < stroka.length(); i++) {
+            for (int i = 0; i < stroka.length()-1; i++) {
                 char c = stroka.charAt(i);
                 if (Character.isUpperCase(c) && i > 0) {
-                    String zagl = ". " + c;
-                    stroka = stroka.replaceAll(String.valueOf(c), zagl);
-                    i += 2;
+                    StringBuilder strBuilder = new StringBuilder(stroka);
+                    strBuilder.replace(i-1, i, ". ");
+                    stroka = String.valueOf(strBuilder);
+                    i++;
                 }
             }
-            stroka = stroka.replaceAll(" . ", ". ");
         }
         return stroka;
     }
