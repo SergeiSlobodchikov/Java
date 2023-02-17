@@ -62,19 +62,19 @@ public class Seminar {
             System.out.println(entry.getKey() + ": " + entry.getValue());
         }
         System.out.println(planetsList);
-        fillCatalog();
+//        fillCatalog();
     }
 
-    public static void fillCatalog() {
-        // Заполнение данными
-        List<String>[] catalog;
-        catalog.add(new ArrayList<>(Arrays.asList("Детективы", "Робин Гуд", "Шерлок Холмс")));
-        catalog.add(new ArrayList<>(Arrays.asList("Фантастика", "Властелин Колец", "Мастер и Маргарита")));
-        catalog.add(new ArrayList<>(Arrays.asList("Научно-популярное", "Архитектура компьютера", "Искусство программирования")));
-        for (List<String> item: catalog)
-            System.out.println(item);
-
-    }
+//    public static void fillCatalog() {
+//        // Заполнение данными
+//        List<String>[] catalog;
+//        catalog.add(new ArrayList<>(Arrays.asList("Детективы", "Робин Гуд", "Шерлок Холмс")));
+//        catalog.add(new ArrayList<>(Arrays.asList("Фантастика", "Властелин Колец", "Мастер и Маргарита")));
+//        catalog.add(new ArrayList<>(Arrays.asList("Научно-популярное", "Архитектура компьютера", "Искусство программирования")));
+//        for (List<String> item: catalog)
+//            System.out.println(item);
+//
+//    }
 
 //    ArrayList<String> planets = new ArrayList<>(Arrays.asList("Mars",
 //            "Uranus",
