@@ -1,12 +1,10 @@
 package Seminar4;
 
-import java.util.HashMap;
+import java.util.*;
 import java.io.*;
-import java.util.Objects;
-import java.util.Scanner;
 
 public class PhoneDirectory {
-    public static HashMap<String, String> phoneMap;
+    public static HashMap<String, HashSet> phoneMap;
 
     public static void main(String[] args) throws IOException {
         menuPhoneDirectory();
@@ -18,7 +16,7 @@ public class PhoneDirectory {
         Scanner sc = new Scanner(System.in);
         String znak = "0";
         String login = "";
-        String phone = "";
+        HashSet<String> phone = new HashSet<String>();
         while (!znak.equals("6")) {
             System.out.println("Menu \n1. Добавить новый контакт или телефон к уже существующему \n2. Удалить телефон"+
                     "\n3. Вывод телефона Контакта \n4. Показать все контакты \n5. Удалить контакт \n6. Выход \n");
@@ -28,15 +26,14 @@ public class PhoneDirectory {
                     System.out.println("Введите имя контакта");
                     login = sc.nextLine();
                     System.out.println("Введите телефон");
-                    phone = sc.nextLine();
-                    addPhone(login, phone);
+                    addPhone(login, sc.nextLine());
                     break;
                 case ("2"):
                     System.out.println("Введите имя контакта");
                     login = sc.nextLine();
                     System.out.println("Введите телефон");
-                    phone = sc.nextLine();
-                    deletePhone(login, phone);
+                    String phon1 = sc.nextLine();
+                    deletePhone(login, phon1);
                     break;
                 case ("3"):
                     System.out.println("Введите имя контакта");
@@ -76,34 +73,29 @@ public class PhoneDirectory {
 
     public static void addPhone(String login, String phone) {
         if (phoneMap.containsKey(login)) {
-            String currentPhone = phoneMap.get(login);
-            phoneMap.put(login, currentPhone + ", " + phone);
+            phoneMap.get(login).add(phone);
         } else {
-            phoneMap.put(login, phone);
+            HashSet<String> phon = new HashSet<>();
+            Collections.addAll(phon, phone);
+            phoneMap.put(login, phon);
         }
     }
+
+
 
     public static void deletePhone(String login, String phone) {
         if (phoneMap.containsKey(login)) {
-            String currentPhone = phoneMap.get(login);
-            String newPhone = currentPhone.replace(", " + phone, "").replace(phone + ", ", "").replace(phone, "");
-            if (newPhone.length() == 0) {
-                phoneMap.remove(login);
-            } else {
-                phoneMap.put(login, newPhone);
-            }
+            phoneMap.get(login).remove(phone);
         }
     }
 
-    public static String getPhone(String login) {
+    public static HashSet getPhone(String login) {
         return phoneMap.get(login);
     }
 
     public static void getAllLogins() {
-        String[] array = phoneMap.keySet().toArray(new String[phoneMap.size()]);
-        for (String name : array) {
-            System.out.println(name);
-        }
+        System.out.println(phoneMap);
+
     }
 
     public static void saveToFile(File file) throws IOException {
@@ -119,10 +111,12 @@ public class PhoneDirectory {
         try (BufferedReader reader = new BufferedReader(new FileReader(file))) {
             String line;
             while ((line = reader.readLine()) != null) {
+                line = line.replace("[", "").replace("]", "");
                 String[] parts = line.split(":");
                 if (parts.length == 2) {
+                    HashSet<String> phone = new HashSet<>();
                     String login = parts[0];
-                    String phone = parts[1];
+                    Collections.addAll(phone, parts[1].split(", "));
                     phoneMap.put(login, phone);
                 }
             }
