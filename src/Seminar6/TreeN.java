@@ -23,7 +23,9 @@ class TreeN {
     }
 
     public static void main(String[] args) {
-        System.out.println(levelOrder(Derevo()));
+        for (int i = 0; i < levelOrder(Derevo()).size(); i++) {
+            System.out.println(levelOrder(Derevo()).get(i) + " Уровень: " + i);
+        }
     }
 
     public static Tree Derevo() {
