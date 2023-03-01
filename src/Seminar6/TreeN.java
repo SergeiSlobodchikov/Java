@@ -1,9 +1,6 @@
 package Seminar6;
 
-import java.util.ArrayList;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Queue;
+import java.util.*;
 
 class TreeN {
     public static class Tree {
@@ -23,12 +20,16 @@ class TreeN {
     }
 
     public static void main(String[] args) {
-        for (int i = 0; i < levelOrder(Derevo()).size(); i++) {
-            System.out.println(levelOrder(Derevo()).get(i) + " Уровень: " + i);
+
+        for (int i = 0; i < levelOrder(derevo()).size(); i++) {
+            System.out.println(levelOrder(derevo()).get(i) + " Уровень: " + i);
         }
+        System.out.println("\nPreorder Traversal" + preorderTraversal(derevo()));
     }
 
-    public static Tree Derevo() {
+
+
+    public static Tree derevo() {
         return new Tree(1,
                 new Tree(2, new Tree(4), new Tree(5,
                         new Tree(7, new Tree(11), null), null)),
@@ -61,4 +62,24 @@ class TreeN {
         }
         return levels;
     }
+    public static List<Integer> preorderTraversal(Tree root) {
+        List<Integer> result = new ArrayList<>();
+        if (root == null) {
+            return result;
+        }
+        Stack<Tree> stack = new Stack<>();
+        stack.push(root);
+        while (!stack.isEmpty()) {
+            Tree node = stack.pop();
+            result.add(node.val);
+            if (node.right != null) {
+                stack.push(node.right);
+            }
+            if (node.left != null) {
+                stack.push(node.left);
+            }
+        }
+        return result;
+    }
+
 }
