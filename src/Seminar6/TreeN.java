@@ -5,7 +5,7 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Queue;
 
-class  TreeN{
+class TreeN {
     public static class Tree {
         int val;
         Tree left;
@@ -21,12 +21,17 @@ class  TreeN{
             this.val = value;
         }
     }
+
     public static void main(String[] args) {
-        Tree root = new Tree(1,
-                new Tree(2, new Tree(4), new Tree(5, new Tree(7), new Tree(8))),
+        System.out.println(levelOrder(Derevo()));
+    }
+
+    public static Tree Derevo() {
+        return new Tree(1,
+                new Tree(2, new Tree(4), new Tree(5,
+                        new Tree(7, new Tree(11), null), null)),
                 new Tree(3, null,
                         new Tree(6, new Tree(9), new Tree(10))));
-        System.out.println(levelOrder(root));
     }
 
     public static List<List<Integer>> levelOrder(Tree root) {
