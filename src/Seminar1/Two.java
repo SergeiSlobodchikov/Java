@@ -3,6 +3,10 @@ package Seminar1;
 //Вывести все простые числа от 1 до 1000
 public class Two {
     public static void main(String[] args) {
+        primeNumber();
+    }
+
+    public static void primeNumber() {
         int k = 0;
         // Выводим простые числа
         System.out.println("Простые числа от 1 до 1000:");
@@ -18,7 +22,7 @@ public class Two {
                 System.out.print(i + " ");
                 k++;
                 // Здесь я решил после каждого десятого числа новая строка
-                if (k % 10 == 0){
+                if (k % 10 == 0) {
                     System.out.println();
                 }
 

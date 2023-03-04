@@ -3,6 +3,10 @@ import java.util.Scanner;
 public class Three {
     //простой калькулятор
     public static void main(String[] args) {
+        calculator();
+    }
+
+    public static void calculator(){
         Scanner scanner = new Scanner(System.in);
         System.out.println("Введите выражение для подсчета, пример (2 + 2) с пробелами:");
         String expression = scanner.nextLine();
