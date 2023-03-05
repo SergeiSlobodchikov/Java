@@ -6,6 +6,9 @@ import java.io.IOException;
 
 public class Two {
     public static void main(String[] args) {
+        correctionData();
+    }
+    public static void correctionData(){
         try (BufferedReader reader = new BufferedReader(new FileReader("src/Seminar2/text_two.txt"))) {
             String line;
             // Делим строку на токены
