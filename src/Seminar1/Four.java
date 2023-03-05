@@ -7,6 +7,7 @@ public class Four {
         System.out.println("Введите выражение пример (2? + ? = 29) и мы покажем варианты решений,");
         System.out.println("Пока работает только с суммой двух слагаемых и на каждое слагаемое не более одного знака ? при записи пробелы также важны: ");
         primer();
+
     }
 
     public static void primer() {
@@ -75,6 +76,7 @@ public class Four {
         } else {
             System.out.println("Вы ввели не правильный пример");
         }
+        scanner.close();
     }
 
 
