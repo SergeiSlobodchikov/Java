@@ -1,0 +1,12 @@
+мар. 05, 2023 2:52:26 PM Seminar2.One bubbleSort
+INFO: Начальный массив: [765, 32, 535, 2, 5]
+мар. 05, 2023 2:52:26 PM Seminar2.One bubbleSort
+INFO: Итерация 1: [32, 535, 2, 5, 765]
+мар. 05, 2023 2:52:26 PM Seminar2.One bubbleSort
+INFO: Итерация 2: [32, 2, 5, 535, 765]
+мар. 05, 2023 2:52:26 PM Seminar2.One bubbleSort
+INFO: Итерация 3: [2, 5, 32, 535, 765]
+мар. 05, 2023 2:52:26 PM Seminar2.One bubbleSort
+INFO: Итерация 4: [2, 5, 32, 535, 765]
+мар. 05, 2023 2:52:26 PM Seminar2.One bubbleSort
+INFO: Отсортированный массив: [2, 5, 32, 535, 765]
