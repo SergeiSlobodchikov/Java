@@ -35,5 +35,6 @@ public class Three {
         else{
             System.out.println("Неверное количество слагаемых!");
         }
+        scanner.close();
     }
 }
