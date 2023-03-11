@@ -9,15 +9,18 @@ public class HomeWork3 {
 
     public static void main(String[] args) {
         // Задание 1
-        ArrayList<Integer> list = listNum();
-        normalizeString(list);
-        //Задание 2
-        ArrayList<Integer> list2 = listNum();
-        delnum(list2);
-        // Задание 3
         ArrayList<Integer> list3 = listNum();
         mergeSort(list3,0, list3.size()-1);
         System.out.println(list3 + " - Отсортировали");
+
+        //Задание 2
+        System.out.println();
+        ArrayList<Integer> list2 = listNum();
+        delnum(list2);
+        // Задание 3
+        ArrayList<Integer> list = listNum();
+        normalizeString(list);
+
     }
 
     public static ArrayList<Integer> listNum() {
