@@ -36,15 +36,6 @@ public class HomeWork3 {
         mergeSort(list, 0,list.size()-1);
         int min = list.get(0);
         int max= list.get(list.size()-1);
-//        int max = list.get(0);
-//        int min = list.get(0);
-//        for (Integer integer : list) {
-//            if (integer > max) {
-//                max = integer;
-//            } else if (integer < min) {
-//                min = integer;
-//            }
-//        }
         // найти среднее арифметическое
         int sum = 0;
         for (Integer num : list) {
