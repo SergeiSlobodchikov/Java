@@ -16,8 +16,8 @@ public class Three {
         char operator = ' ';
         int number1 = 0;
         int number2 = 0;
+        System.out.println("Введите выражение для подсчета, пример (2 + 2)");
         while (true) {
-            System.out.println("Введите выражение для подсчета, пример (2 + 2) с пробелами, или 'отмена', или 'off':");
             String input = scanner.nextLine();
             if (input.equalsIgnoreCase("off")) {
                 break; // завершаем работу калькулятора
@@ -81,6 +81,7 @@ public class Three {
                     System.out.println(result);
                 }
             }
+            System.out.println("Можете продолжить с ответом, пример (+ 2), или 'отмена' для отмены последней операции,  'off' выключение калькулятора");
         }
         scanner.close();
     }
