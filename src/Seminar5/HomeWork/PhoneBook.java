@@ -27,7 +27,7 @@ public class PhoneBook {
         }
     }
 
-    public void menu() {
+    public static void menu() {
         PhoneBook phoneBook = new PhoneBook();
         Scanner scanner = new Scanner(System.in);
 
@@ -51,6 +51,5 @@ public class PhoneBook {
                 System.out.println("Неверный выбор");
             }
         }
-        scanner.close();
     }
 }
