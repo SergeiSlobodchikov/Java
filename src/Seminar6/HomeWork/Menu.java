@@ -1,7 +1,6 @@
 package Seminar6.HomeWork;
 
-import java.util.Scanner;
-import java.util.Set;
+import java.util.*;
 
 public class Menu {
     public static void menu(Set<NoteBook> notebooks) {
@@ -27,8 +26,8 @@ public class Menu {
         while (filterCriteria != 0) {
             switch (filterCriteria) {
                 case 1:
-                    System.out.println("Марки:\n1) HP, \n2) Dell, \n3) Lenovo, \n4) Apple, \n5) Asus, \n6) Acer, \n7) Xiaomi, \n8) MSI, \n9) Samsung");
-                    System.out.print("Введите марку ноутбука: ");
+                    System.out.println("Бренд:\n1) HP, \n2) Dell, \n3) Lenovo, \n4) Apple, \n5) Asus, \n6) Acer, \n7) Xiaomi, \n8) MSI, \n9) Samsung");
+                    System.out.print("Введите число бренда ноутбука: ");
                     String brand = scanner.next();
                     notebooks = FilterNoteBook.filterByBrand(notebooks, brand);
                     System.out.println(printMenu);
@@ -49,14 +48,14 @@ public class Menu {
                     break;
                 case 4:
                     System.out.println("OS: \n1) Windows 10, \n2) MacOS, \n3) Ubuntu, \n4) Chrome OS, \n5) Bios, \n6) Windows 11");
-                    System.out.print("Введите операционную систему: ");
+                    System.out.print("Введите число операционной системы: ");
                     String os = scanner.next();
                     notebooks = FilterNoteBook.filterByOs(notebooks, os);
                     System.out.println(printMenu);
                     break;
                 case 5:
-                    System.out.print("Цвет: \n1) Black \n2) Silver \n3) Gold Rose \n4) Gold \n5) Space Gray \n6) Cosmic black \n7) White \n8) Blue \n9) Green \n10) Yellow");
-                    System.out.print("Введите цвет ноутбука: ");
+                    System.out.print("Цвет: \n1) Black \n2) Silver \n3) Gold Rose \n4) Gold \n5) Space Gray \n6) Cosmic black \n7) White \n8) Blue \n9) Green \n10) Yellow\n");
+                    System.out.print("Введите число цвета ноутбука : ");
                     String color = scanner.next();
                     notebooks = FilterNoteBook.filterByColor(notebooks, color);
                     System.out.println(printMenu);
@@ -77,7 +76,9 @@ public class Menu {
                     System.out.printf("минимальная цена %s и максимальная цена %s установлена", minPrice, maxPrice);
                     break;
                 case 8:
-                    for (NoteBook notebook : notebooks) {
+                    List<NoteBook> sortedNotebooks = new ArrayList<>(notebooks);
+                    Collections.sort(sortedNotebooks, Comparator.comparing(NoteBook::getPrice));
+                    for (NoteBook notebook : sortedNotebooks) {
                         System.out.println(notebook);
                     }
                     System.out.println(printMenu);
@@ -92,5 +93,6 @@ public class Menu {
             }
             filterCriteria = scanner.nextInt();
         }
+        scanner.close();
     }
 }
