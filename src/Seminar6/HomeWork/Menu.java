@@ -1,7 +1,6 @@
 package Seminar6.HomeWork;
 
-import java.util.Scanner;
-import java.util.Set;
+import java.util.*;
 
 public class Menu {
     public static void menu(Set<NoteBook> notebooks) {
@@ -77,7 +76,9 @@ public class Menu {
                     System.out.printf("минимальная цена %s и максимальная цена %s установлена", minPrice, maxPrice);
                     break;
                 case 8:
-                    for (NoteBook notebook : notebooks) {
+                    List<NoteBook> sortedNotebooks = new ArrayList<>(notebooks);
+                    Collections.sort(sortedNotebooks, Comparator.comparing(NoteBook::getPrice));
+                    for (NoteBook notebook : sortedNotebooks) {
                         System.out.println(notebook);
                     }
                     System.out.println(printMenu);

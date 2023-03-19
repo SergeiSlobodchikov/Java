@@ -41,15 +41,23 @@ public class FilterNoteBook {
                 System.out.println("Вы выбрали ноутбук от Samsung");
                 brand = "Samsung";
             }
-            default -> System.out.println("Вы выбрали ноутбук от неизвестного производителя");
-        }
-        Set<NoteBook> filtered = new HashSet<>();
-        for (NoteBook notebook : notebooks) {
-            if (notebook.getBrand().equals(brand)) {
-                filtered.add(notebook);
+            default -> {
+                System.out.println("Вы выбрали ноутбук от неизвестного производителя");
+                brand = "stop";
             }
+
+
         }
-        return filtered;
+        if (!brand.equals("stop")) {
+            Set<NoteBook> filtered = new HashSet<>();
+            for (NoteBook notebook : notebooks) {
+                if (notebook.getBrand().equals(brand)) {
+                    filtered.add(notebook);
+                }
+            }
+            return filtered;
+        }
+        return notebooks;
     }
 
     public static Set<NoteBook> filterByRam(Set<NoteBook> notebooks, int minRam, int maxRam) {
@@ -100,15 +108,21 @@ public class FilterNoteBook {
                 System.out.println("Windows 11");
                 os = "Windows 11";
             }
-            default -> System.out.println("Нету заданной операционной системы");
-        }
-        Set<NoteBook> filtered = new HashSet<>();
-        for (NoteBook notebook : notebooks) {
-            if (notebook.getOs().equals(os)) {
-                filtered.add(notebook);
+            default -> {
+                System.out.println("Нету заданной операционной системы");
+                os = "stop";
             }
         }
-        return filtered;
+        if (!os.equals("stop")) {
+            Set<NoteBook> filtered = new HashSet<>();
+            for (NoteBook notebook : notebooks) {
+                if (notebook.getOs().equals(os)) {
+                    filtered.add(notebook);
+                }
+            }
+            return filtered;
+        }
+        return notebooks;
     }
 
     public static Set<NoteBook> filterByColor(Set<NoteBook> notebooks, String color) {
@@ -153,15 +167,21 @@ public class FilterNoteBook {
                 System.out.println("Вы выбрали Yellow");
                 color = "Yellow";
             }
-            default -> System.out.println("Вы выбрали неизвестный цвет");
-        }
-        Set<NoteBook> filtered = new HashSet<>();
-        for (NoteBook notebook : notebooks) {
-            if (notebook.getColor().equals(color)) {
-                filtered.add(notebook);
+            default -> {
+                System.out.println("Вы выбрали неизвестный цвет");
+                color = "stop";
             }
         }
-        return filtered;
+        if (!color.equals("stop")) {
+            Set<NoteBook> filtered = new HashSet<>();
+            for (NoteBook notebook : notebooks) {
+                if (notebook.getColor().equals(color)) {
+                    filtered.add(notebook);
+                }
+            }
+            return filtered;
+        }
+        return notebooks;
     }
 
     public static Set<NoteBook> filterByDiagonal(Set<NoteBook> notebooks, double minDiagonal, double maxDiagonal) {
