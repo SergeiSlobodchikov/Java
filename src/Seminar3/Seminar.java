@@ -1,8 +1,92 @@
 package Seminar3;
+
 import java.util.*;
 import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.Scanner;
 
 public class Seminar {
+
+    public static void main(String[] args) {
+        String[] elements = {"apple", "banana", "orange", "pear", "kiwi"};
+        Stack<String> stack = new Stack<>();
+        for (String element : elements) {
+            stack.push(element);
+        }
+        System.out.println("Содержимое стэка:");
+        while (!stack.empty()) {
+            System.out.println(stack.pop());
+        }
+    }
+    }
+//        LinkedList<String> linkedList = new LinkedList<>();
+//        Scanner scanner = new Scanner(System.in);
+//        while (true) {
+//            System.out.println("Введите строку или print~num для вывода и удаления элемента:");
+//            String input = scanner.nextLine();
+//            if (input.startsWith("print~")) {
+//                try {
+//                    int index = Integer.parseInt(input.substring(6));
+//                    String element = linkedList.remove(index);
+//                    System.out.println("Элемент \"" + element + "\" удален из позиции " + index);
+//                } catch (NumberFormatException e) {
+//                    System.out.println("Ошибка: введите числовое значение после знака ~");
+//                } catch (IndexOutOfBoundsException e) {
+//                    System.out.println("Ошибка: в списке нет элемента с таким индексом");
+//                }
+//            } else {
+//                linkedList.add(input);
+//            }
+//            System.out.println("Текущий список элементов:");
+//            for (String element : linkedList) {
+//                System.out.println(element);
+//            }
+//        }
+//            LinkedList<String> inputList = new LinkedList<>();
+//            Scanner scanner = new Scanner(System.in);
+//            while (true) {
+//                System.out.println("Введите строку или print для вывода в обратном порядке, или stop для выхода:");
+//                String input = scanner.nextLine();
+//                if (input.equalsIgnoreCase("print")) {
+//                    System.out.println("Строки в обратном порядке:");
+//                    for (int i = inputList.size() - 1; i >= 0; i--) {
+//                        System.out.println(inputList.get(i));
+//                    }
+//                } else if (input.equalsIgnoreCase("stop")) {
+//                    System.out.println("Программа завершена.");
+//                    break;
+//                } else {
+//                    inputList.add(input);
+//                }
+//            }
+//        }
+
+
+        /**
+         принимает строки от пользователя. Если введено print, выводим с конца. Выходим по stop.
+         */
+
+
+//            Stack<String> stack = new Stack<String>();
+//            while (true){
+//                System.out.print("Enter value: ");
+//                String s = input.nextLine();
+//                if (s.equals("print")){
+//                    while(!stack.isEmpty()){
+//                        System.out.println(stack.pop());
+//                    }
+//                }else if(s.equals("stop")){
+//                    break;
+//                }else{
+//                    stack.push(s);
+//                    System.out.println(stack);
+//                }
+//            }
+//            input.close();
+//        }
+
+//    }
+
 //    public static void main(String[] args) {
 //        String s1 = "hello";
 //        String s2 = "hello";
@@ -36,34 +120,76 @@ public class Seminar {
 //    }
 
 
-    public static void main(String[] args) {
-        ArrayList<String> planetsList = new ArrayList<>();
-        planetsList.add("Меркурий");
-        planetsList.add("Венера");
-        planetsList.add("Земля");
-        planetsList.add("Марс");
-        planetsList.add("Юпитер");
-        planetsList.add("Сатурн");
-        planetsList.add("Уран");
-        planetsList.add("Нептун");
-        planetsList.add("Марс");
-        planetsList.add("Земля");
-        Map<String, Integer> planetCounter = new HashMap<>();
-        for (String planet : planetsList) {
-            if (planetCounter.containsKey(planet)) {
-                int count = planetCounter.get(planet);
-                planetCounter.put(planet, count + 1);
-            } else {
-                planetCounter.put(planet, 1);
-            }
-        }
-        System.out.println("Названия планет и количество их повторений:");
-        for (Map.Entry<String, Integer> entry : planetCounter.entrySet()) {
-            System.out.println(entry.getKey() + ": " + entry.getValue());
-        }
-        System.out.println(planetsList);
+//    public static void main(String[] args) {
+//        ArrayList<Object> list = new ArrayList<Object>();
+//
+//        // Заполняем список строками и целыми числами
+//        list.add("строка 1");
+//        list.add(10);
+//        list.add("строка 2");
+//        list.add(20);
+//        list.add("строка 3");
+//        list.add(30);
+//
+//        // Проходим по списку и удаляем целые числа
+//        for (int i = list.size() - 1; i >= 0; i--) {
+//            Object obj = list.get(i);
+//            if (obj instanceof Integer) {
+//                list.remove(i);
+//            }
+//        }
+//
+//        // Выводим список без целых чисел
+//        System.out.println(list);
+//
+//        }
+
+//        ArrayList<String> list = new ArrayList<>();
+//        list.add("Меркурий");
+//        list.add("Венера");
+//        list.add("Земля");
+//        list.add("Марс");
+//        list.add("Юпитер");
+//        list.add("Сатурн");
+//        list.add("Уран");
+//        list.add("Нептун");
+//        list.add("Марс");
+//        list.add("Земля");
+//
+//        String prevPlanet = null;
+//        int count = 0;
+//        list.sort(null);
+//        // Выводим названия планет и количество их повторений
+//        for (String planet : list) {
+//            if (planet.equals(prevPlanet)) {
+//                count++;
+//            } else {
+//                if (prevPlanet != null) {
+//                    System.out.println(prevPlanet + ": " + count);
+//                }
+//                prevPlanet = planet;
+//                count = 1;
+//            }
+//        }
+//        // Выводим информацию о последней планете в списке
+//        System.out.println(prevPlanet + ": " + count);
+
+//        Map<String, Integer> planetCounter = new HashMap<>();
+//        for (String planet : list) {
+//            if (planetCounter.containsKey(planet)) {
+//                int count = planetCounter.get(planet);
+//                planetCounter.put(planet, count + 1);
+//            } else {
+//                planetCounter.put(planet, 1);
+//            }
+//        }
+//        System.out.println("Названия планет и количество их повторений:");
+//        for (Map.Entry<String, Integer> entry : planetCounter.entrySet()) {
+//            System.out.println(entry.getKey() + ": " + entry.getValue());
+//        }
+//        System.out.println(planetsList);
 //        fillCatalog();
-    }
+//    }
 
 //    public static void fillCatalog() {
 //        // Заполнение данными
@@ -117,4 +243,4 @@ public class Seminar {
 //    }
 //
 //        System.out.println(planets);
-}
+//}

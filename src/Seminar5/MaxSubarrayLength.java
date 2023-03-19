@@ -12,8 +12,8 @@ public class MaxSubarrayLength {
     }
 
     public static void massive() {
-        int[] nums1 = {1, 2, 3, 2, 1};
-        int[] nums2 = {3, 2, 1, 4, 5};
+        int[] nums1 = { 3, 2, 1, 4, 5};
+        int[] nums2 = {1, 2, 3, 2, 1, 3, 2, 1, 4, 5};
         Map<Integer, String> maxSubarray;
         maxSubarray = findCommonSubarray(nums1, nums2);
         System.out.println(Arrays.toString(nums1) + " \n" + Arrays.toString(nums2));
